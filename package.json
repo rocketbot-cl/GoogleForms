@@ -1,59 +1,876 @@
 {
     "author": "Auca Maillot",
-    "description": "Acá una description en español | and here a description in English",
+    "description": "Modulo para manipular Formularios de google | Manage Google Forms with this module",
     "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
     "version": "0.1.0",
     "license": "MIT",
     "homepage": "http://rocketbot.co/",
-    "name": "google-forms",
     "linux": false,
     "windows": true,
     "mac": false,
     "docker": false,
     "dependencies": {
-
+        "google-api-python-client": "*",
+        "google-auth-httplib2": "*",
+        "google-auth-oauthlib": "*"
     },
+    "type": "module",
+    "name": "GoogleForms",
     "title": {
         "en": "Google Forms",
         "es": "Google Formularios"
     },
-    "icon": "insert icon",
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
     "children": [
         {
             "title": {
                 "en": "Connect with G-Forms",
                 "es": "Conectar con Fomularios de Google"
-            }
+            },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+            {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:\\Usuario\\Desktop\\credenciales.json",
+              "en": "C:\\User\\Desktop\\credentials.json",
+              "pr": "C:\\Usuario\\Desktop\\credentials.json"
+            },
+            "title": {
+              "es": "Ruta archivo de credenciales",
+              "en": "Credentials file path",
+              "pr": "Caminho de credenciais"
+            },
+            "description": {
+              "es": "Archivo json con las credenciales de acceso a la API de Google Admin. Revisar la documentación para obtener más información.",
+              "en": "JSON file with the credentials to access the Google Admin API. See the documentation for more information.",
+              "pr": "Arquivo json com as credenciais de acesso ao API do Google Admin. Veja a documentação para obter mais informações."
+            },
+            "extensions": [
+              [
+                "Json Files",
+                "*.json"
+              ]
+            ],
+            "id": "credentials_path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "result",
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
+            },
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
+          }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "connect_forms",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         },
         {
             "title": {
                 "en": "List Form",
                 "es": "Listar Formulario"
-            }
+            },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "this is a placeholder",
+                        "title": {
+                          "en": "Input text:",
+                          "es": "Entrada de texto:"
+                        },
+                        "id": "input_1",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "select",
+                        "title": {
+                          "es": "Selector de datos:",
+                          "en": "Input select:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "name",
+                            "value": "name"
+                          },
+                          {
+                            "title": "class",
+                            "value": "class"
+                          }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en":  "Help example",
+                            "cn":  "Help example"
+                        },
+                        "id": "option_",
+                        "css": "col-md-6"
+                      },{
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "Archivo nuevo",
+                            "en": "New File"                        
+                        },
+                        "title": {
+                            "es": "Crear Archivo Nuevo:",
+                            "en": "Create new file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde se creara el archivo nuevo",
+                            "en": "Path to new file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folder",
+                        "css": "col-md-6"
+                    },{
+                        "type": "checkbox",
+                        "placeholder": {
+                            "es": "Checkbox",
+                            "en": "Checkbox"                        
+                        },
+                        "title": {
+                            "es": "Checkbox title:",
+                            "en": "Checkbox title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Checkbox",
+                            "en": "Checkbox help"
+                        },
+                        "id": "check",
+                        "css": "col-md-6"
+                    },{
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "Textarea placeholder",
+                            "en": "Textarea placeholder"                        
+                        },
+                        "title": {
+                            "es": "Textarea title:",
+                            "en": "Textarea  title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Textarea",
+                            "en": "Textarea help"
+                        },
+                        "id": "Textarea",
+                        "css": "col-md-6"
+                    },{
+                        "type": "label",
+                        "title": {
+                            "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
+                            "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+                        },
+                        "id": "label",
+                        "css": "col-md-6"
+                    }
+                    
+
+                ]
+            },
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "list_form",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         },
-        {
-            "title": {
+         {
+             "title": {
                 "en": "Read Form",
                 "es": "Leer Formulario"
-            }
+            },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "this is a placeholder",
+                        "title": {
+                          "en": "Input text:",
+                          "es": "Entrada de texto:"
+                        },
+                        "id": "input_1",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "select",
+                        "title": {
+                          "es": "Selector de datos:",
+                          "en": "Input select:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "name",
+                            "value": "name"
+                          },
+                          {
+                            "title": "class",
+                            "value": "class"
+                          }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en":  "Help example",
+                            "cn":  "Help example"
+                        },
+                        "id": "option_",
+                        "css": "col-md-6"
+                      },{
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "Archivo nuevo",
+                            "en": "New File"                        
+                        },
+                        "title": {
+                            "es": "Crear Archivo Nuevo:",
+                            "en": "Create new file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde se creara el archivo nuevo",
+                            "en": "Path to new file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folder",
+                        "css": "col-md-6"
+                    },{
+                        "type": "checkbox",
+                        "placeholder": {
+                            "es": "Checkbox",
+                            "en": "Checkbox"                        
+                        },
+                        "title": {
+                            "es": "Checkbox title:",
+                            "en": "Checkbox title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Checkbox",
+                            "en": "Checkbox help"
+                        },
+                        "id": "check",
+                        "css": "col-md-6"
+                    },{
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "Textarea placeholder",
+                            "en": "Textarea placeholder"                        
+                        },
+                        "title": {
+                            "es": "Textarea title:",
+                            "en": "Textarea  title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Textarea",
+                            "en": "Textarea help"
+                        },
+                        "id": "Textarea",
+                        "css": "col-md-6"
+                    },{
+                        "type": "label",
+                        "title": {
+                            "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
+                            "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+                        },
+                        "id": "label",
+                        "css": "col-md-6"
+                    }
+                    
+
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "read_form",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         },
         {
-            "title": {
+          "title": {
                 "en": "Create Form",
                 "es": "Crear Formulario"
-            }
+          },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "this is a placeholder",
+                        "title": {
+                          "en": "Input text:",
+                          "es": "Entrada de texto:"
+                        },
+                        "id": "input_1",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "select",
+                        "title": {
+                          "es": "Selector de datos:",
+                          "en": "Input select:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "name",
+                            "value": "name"
+                          },
+                          {
+                            "title": "class",
+                            "value": "class"
+                          }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en":  "Help example",
+                            "cn":  "Help example"
+                        },
+                        "id": "option_",
+                        "css": "col-md-6"
+                      },{
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "Archivo nuevo",
+                            "en": "New File"                        
+                        },
+                        "title": {
+                            "es": "Crear Archivo Nuevo:",
+                            "en": "Create new file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde se creara el archivo nuevo",
+                            "en": "Path to new file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folder",
+                        "css": "col-md-6"
+                    },{
+                        "type": "checkbox",
+                        "placeholder": {
+                            "es": "Checkbox",
+                            "en": "Checkbox"                        
+                        },
+                        "title": {
+                            "es": "Checkbox title:",
+                            "en": "Checkbox title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Checkbox",
+                            "en": "Checkbox help"
+                        },
+                        "id": "check",
+                        "css": "col-md-6"
+                    },{
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "Textarea placeholder",
+                            "en": "Textarea placeholder"                        
+                        },
+                        "title": {
+                            "es": "Textarea title:",
+                            "en": "Textarea  title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Textarea",
+                            "en": "Textarea help"
+                        },
+                        "id": "Textarea",
+                        "css": "col-md-6"
+                    },{
+                        "type": "label",
+                        "title": {
+                            "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
+                            "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+                        },
+                        "id": "label",
+                        "css": "col-md-6"
+                    }
+                    
+
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "create_form",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         },
-        {
+          {
             "title": {
                 "en": "Delete Form",
                 "es": "Eliminar Formulario"
-            }
+            },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "this is a placeholder",
+                        "title": {
+                          "en": "Input text:",
+                          "es": "Entrada de texto:"
+                        },
+                        "id": "input_1",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "select",
+                        "title": {
+                          "es": "Selector de datos:",
+                          "en": "Input select:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "name",
+                            "value": "name"
+                          },
+                          {
+                            "title": "class",
+                            "value": "class"
+                          }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en":  "Help example",
+                            "cn":  "Help example"
+                        },
+                        "id": "option_",
+                        "css": "col-md-6"
+                      },{
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "Archivo nuevo",
+                            "en": "New File"                        
+                        },
+                        "title": {
+                            "es": "Crear Archivo Nuevo:",
+                            "en": "Create new file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde se creara el archivo nuevo",
+                            "en": "Path to new file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folder",
+                        "css": "col-md-6"
+                    },{
+                        "type": "checkbox",
+                        "placeholder": {
+                            "es": "Checkbox",
+                            "en": "Checkbox"                        
+                        },
+                        "title": {
+                            "es": "Checkbox title:",
+                            "en": "Checkbox title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Checkbox",
+                            "en": "Checkbox help"
+                        },
+                        "id": "check",
+                        "css": "col-md-6"
+                    },{
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "Textarea placeholder",
+                            "en": "Textarea placeholder"                        
+                        },
+                        "title": {
+                            "es": "Textarea title:",
+                            "en": "Textarea  title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Textarea",
+                            "en": "Textarea help"
+                        },
+                        "id": "Textarea",
+                        "css": "col-md-6"
+                    },{
+                        "type": "label",
+                        "title": {
+                            "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
+                            "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+                        },
+                        "id": "label",
+                        "css": "col-md-6"
+                    }
+                    
+
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "delete_form",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         },
         {
             "title": {
-                "en": "Export Form to .xlsx",
-                "es": "Exportar Formulario a .xlsx"
-            }
+                "en": "Export to .xlsx",
+                "es": "Exportar a .xlsx"
+            },
+              "description": {
+                "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
+                "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+              },
+            "form": {
+                "css": "modal-lg",
+                "style":"min-width:1024px;",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": "this is a placeholder",
+                        "title": {
+                          "en": "Input text:",
+                          "es": "Entrada de texto:"
+                        },
+                        "id": "input_1",
+                        "css": "col-md-6"
+                      },
+                      {
+                        "type": "select",
+                        "title": {
+                          "es": "Selector de datos:",
+                          "en": "Input select:"
+                        },
+                        "options": [
+                          {
+                            "title": "--Seleccione--",
+                            "value": ""
+                          },
+                          {
+                            "title": "name",
+                            "value": "name"
+                          },
+                          {
+                            "title": "class",
+                            "value": "class"
+                          }
+                        ],
+                        "help": {
+                            "es": "Help example",
+                            "en":  "Help example",
+                            "cn":  "Help example"
+                        },
+                        "id": "option_",
+                        "css": "col-md-6"
+                      },{
+                        "type": "file_select",
+                        "placeholder": {
+                            "es": "Ruta a archivo",
+                            "en": "Path to file"
+                        },
+                        "title": {
+                            "es": "Seleccionar un archivo:",
+                            "en": "Select a file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde está el archivo",
+                            "en": "Path to file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "file_new",
+                        "placeholder": {
+                            "es": "Archivo nuevo",
+                            "en": "New File"                        
+                        },
+                        "title": {
+                            "es": "Crear Archivo Nuevo:",
+                            "en": "Create new file:"
+                        },
+                        "help": {
+                            "es": "Ruta donde se creara el archivo nuevo",
+                            "en": "Path to new file"
+                        },
+                        "id": "pdf",
+                        "css": "col-md-6"
+                    },{
+                        "type": "folder_select",
+                        "placeholder": {
+                            "es": "Ruta a Carpeta",
+                            "en": "Path to folder"                        
+                        },
+                        "title": {
+                            "es": "Seleccionar una carpeta:",
+                            "en": "Select a Folder:"
+                        },
+                        "help": {
+                            "es": "Ruta a la carpeta",
+                            "en": "Path to folder"
+                        },
+                        "id": "folder",
+                        "css": "col-md-6"
+                    },{
+                        "type": "checkbox",
+                        "placeholder": {
+                            "es": "Checkbox",
+                            "en": "Checkbox"                        
+                        },
+                        "title": {
+                            "es": "Checkbox title:",
+                            "en": "Checkbox title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Checkbox",
+                            "en": "Checkbox help"
+                        },
+                        "id": "check",
+                        "css": "col-md-6"
+                    },{
+                        "type": "textarea",
+                        "placeholder": {
+                            "es": "Textarea placeholder",
+                            "en": "Textarea placeholder"                        
+                        },
+                        "title": {
+                            "es": "Textarea title:",
+                            "en": "Textarea  title:"
+                        },
+                        "help": {
+                            "es": "Ayuda de Textarea",
+                            "en": "Textarea help"
+                        },
+                        "id": "Textarea",
+                        "css": "col-md-6"
+                    },{
+                        "type": "label",
+                        "title": {
+                            "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
+                            "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+                        },
+                        "id": "label",
+                        "css": "col-md-6"
+                    }
+                    
+
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+            "module": "export_to_xlsx",
+            "module_name": "GoogleForms",
+            "father": "module",
+            "group": "scripts",
+            "linux": false,
+            "windows": true,
+            "mac": false,
+            "docker": false,
+            "visible": true,
+            "options": false
         }
     ]
 }

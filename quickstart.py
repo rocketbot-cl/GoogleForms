@@ -1,8 +1,7 @@
-from __future__ import print_function
+# from __future__ import print_function
 
 # Google libraries
 from googleapiclient import discovery
-from httplib2 import Http
 from google_auth_oauthlib.flow import InstalledAppFlow
 # docs
 # https://github.com/googleapis/google-api-python-client/blob/main/docs/README.md
