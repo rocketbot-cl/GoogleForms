@@ -38,6 +38,12 @@ if gd_libs_path not in sys.path:
     sys.path.append(gd_libs_path)
 
 """
+The code of each module works as a local scope. Each command that is executed resets the data.
+To share information between commands, declare the variable as global. The sintax will be 'mod_modulename' or similar
+"""
+global mod_google_directory
+
+"""
 To connect to multiple databases, a dictionary is created and stores the instance of each connection.
 The syntax is {"session name": {data}}
 """
@@ -68,23 +74,14 @@ class GoogleDirectory:
         from googleapiclient import discovery
 
         self.creds = None
-        # The file token.json stores the user's access and refresh tokens, and is
-        # created automatically when the authorization flow completes for the first
-        # time.
+
         if not self.creds or self.creds.invalid:
             flow = InstalledAppFlow.from_client_secrets_file(
                 self.credential_path, self.SCOPES
             )
             self.creds = flow.run_local_server()
-            # If there are no (valid) credentials available, let the user log in.
-            # Save the credentials for the next run
-            # with open(self.token_path, "w") as token:
-            #     token.write(self.creds.to_json())
 
-        print("deberia imprimir esta linea")
-        print(self.creds)
         self.form_service = discovery.build("forms", "v1", credentials=self.creds)
-        # print("no deberia imprimir esta linea")
 
 
 try:
@@ -106,66 +103,12 @@ try:
             mod_google_directory[session] = google_directory
             SetVar(result, True)  # type:ignore
 
-            # Esto es una prueba para ver si lo crea bien------------------------
-            # Request body for creating a form
-            NEW_FORM = {
-                "info": {
-                    "title": "fomulario nuevo",
-                }
-            }
-
-            NEW_QUESTION = {
-                "requests": [
-                    {
-                        "createItem": {
-                            "item": {
-                                "title": "In what year did the United States land a mission on the moon?",
-                                "questionItem": {
-                                    "question": {
-                                        "required": True,
-                                        "choiceQuestion": {
-                                            "type": "RADIO",
-                                            "options": [
-                                                {"value": "1965"},
-                                                {"value": "1967"},
-                                                {"value": "1969"},
-                                                {"value": "1971"},
-                                            ],
-                                            "shuffle": True,
-                                        },
-                                    }
-                                },
-                            },
-                            "location": {"index": 0},
-                        }
-                    }
-                ]
-            }
-
-            # Creates the initial form
-            result = google_directory.form_service.forms().create(body=NEW_FORM).execute()
-
-            # Adds the question to the form
-            question_setting = (
-                google_directory.form_service.forms()
-                .batchUpdate(formId=result["formId"], body=NEW_QUESTION)
-                .execute()
-            )
-
-            # Prints the result to show the question has been added
-            get_result = google_directory.form_service.forms().get(formId=result["formId"]).execute()
-            print(get_result)
-
-
-            # fin de la prueba ---------------------------------------------------
-
         except Exception as e:
             SetVar(result, False)  # type:ignore
             print(f'imprimio False en la variable "{result}"')
             PrintException()  # type:ignore
             raise e
 
-        
     if module == "list_form":
         print(f"The module {module} is not yet implemented")
         pass
@@ -175,14 +118,59 @@ try:
         pass
 
     if module == "create_form":
-        print(f"The module {module} is not yet implemented")
+        # The field "input_" is left intentionally to catch up with the if cycle.
+        # Just after the if is confirmed a function GetParams is called and stored in a meaningful variable
+        create_form_option = GetParams("option_")
 
-        # Request body for creating a form
-        NEW_FORM = {
-            "info": {
-                "title": "fomulario nuevo",
+        google_directory = mod_google_directory[session]
+
+        # Write a JSON to create a new form. Google Forms API compliant
+        if create_form_option == "create_new_form":
+            # https://developers.google.com/forms/api/guides/create-form-quiz#create_a_new_form
+            form_title = GetParams("input_")
+            NEW_FORM = {
+                "info": {
+                    "title": f"{form_title}",
+                }
             }
-        }
+
+            # Create the form
+            result = (
+                google_directory.form_service.forms().create(body=NEW_FORM).execute()
+            )
+
+            # Prints the result to show the form has been created
+            get_result = (
+                google_directory.form_service.forms()
+                .get(formId=result["formId"])
+                .execute()
+            )
+            print(get_result)
+
+        if create_form_option == "duplicate_a_form":
+            # https://developers.google.com/forms/api/guides/create-form-quiz#duplicate_an_existing_form
+            form_id = GetParams("input_") #type: ignore
+            copied_file = {'title': 'my_copy'}
+            print(dir(google_directory.form_service))
+
+            result = (
+                google_directory.form_service.files()
+                .copy(fileId=form_id, body=copied_file)
+                .execute()
+            )
+
+            # Prints the result to show the form has been created
+            get_result = google_directory.form_service.forms()
+            print(get_result)
+
+        if create_form_option == "convert_form_to_quiz":
+            # https://developers.google.com/forms/api/guides/create-form-quiz#convert_a_form_to_a_quiz
+            form_id = GetParams("input_") #type: ignore
+
+    # this module is not even written in the package.json!
+    if module == "update_form":
+        print(f"The module {module} is not yet implemented")
+        pass
 
         NEW_QUESTION = {
             "requests": [
@@ -212,19 +200,12 @@ try:
             ]
         }
 
-        # Creates the initial form
-        result = google_directory.form_service.forms().create(body=NEW_FORM).execute()
-
         # Adds the question to the form
         question_setting = (
-            form_service.forms()
+            google_directory.form_service.forms()
             .batchUpdate(formId=result["formId"], body=NEW_QUESTION)
             .execute()
         )
-
-        # Prints the result to show the question has been added
-        get_result = form_service.forms().get(formId=result["formId"]).execute()
-        print(get_result)
 
     if module == "delete_form":
         print(f"The module {module} is not yet implemented")
