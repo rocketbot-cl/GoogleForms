@@ -63,7 +63,10 @@ class GoogleDirectory:
     """
 
     def __init__(self, credential_path) -> None:
-        self.SCOPES = "https://www.googleapis.com/auth/forms.body"
+        self.SCOPES = [
+            "https://www.googleapis.com/auth/forms.body",
+            "https://www.googleapis.com/auth/forms.responses.readonly",
+        ]
         self.DISCOVERY_DOC = "https://forms.googleapis.com/$discovery/rest?version=v1"
         self.credential_path = credential_path
         self.form_service = None
@@ -109,18 +112,16 @@ try:
             PrintException()  # type:ignore
             raise e
 
-    if module == "list_form":
-        print(f"The module {module} is not yet implemented")
-        pass
-
-    if module == "read_form":
-        print(f"The module {module} is not yet implemented")
-        pass
-
     if module == "create_form":
         # The field "input_" is left intentionally to catch up with the if cycle.
         # Just after the if is confirmed a function GetParams is called and stored in a meaningful variable
-        create_form_option = GetParams("option_")
+        # create_form_option = GetParams("option_")
+
+        """
+        For faster fixing, I set constant the option to create form
+        Please delete this harcode before implementing the othe methods
+        """
+        create_form_option = "create_new_form"
 
         google_directory = mod_google_directory[session]
 
@@ -147,6 +148,8 @@ try:
             )
             print(get_result)
 
+        """
+        # task suspended by new priorities
         if create_form_option == "duplicate_a_form":
             # https://developers.google.com/forms/api/guides/create-form-quiz#duplicate_an_existing_form
             form_id = GetParams("input_") #type: ignore
@@ -162,11 +165,30 @@ try:
             # Prints the result to show the form has been created
             get_result = google_directory.form_service.forms()
             print(get_result)
+        """
 
+        """
+        # task suspended by new priorities
         if create_form_option == "convert_form_to_quiz":
             # https://developers.google.com/forms/api/guides/create-form-quiz#convert_a_form_to_a_quiz
             form_id = GetParams("input_") #type: ignore
+        """
 
+    # task suspended by new priorities
+    if module == "read_form":
+    # this collects the metadata of the form. 
+    # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_form_contents_and_metadata
+        form_id = GetParams("input_1") #type: ignore
+        print(f'the form id is {form_id}')
+
+        google_directory = mod_google_directory[session]
+
+        result = (
+            google_directory.form_service.forms().get(formId=form_id).execute()
+        )
+        print(result)
+
+    """
     # this module is not even written in the package.json!
     if module == "update_form":
         print(f"The module {module} is not yet implemented")
@@ -206,14 +228,34 @@ try:
             .batchUpdate(formId=result["formId"], body=NEW_QUESTION)
             .execute()
         )
+    """
 
+    if module == "retrieve_responses":
+        # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_all_form_responses
+        form_id = GetParams("input_1")  # type: ignore
+        print(f"the form id is {form_id}")
+
+        google_directory = mod_google_directory[session]
+
+        result = (
+            google_directory.form_service.forms()
+            .responses()
+            .list(formId=form_id)
+            .execute()
+        )
+        print(result)
+
+    """
+    # task suspended by new priorities
     if module == "delete_form":
         print(f"The module {module} is not yet implemented")
-        pass
+    """
 
+    """
+    # task suspended by new priorities
     if module == "export_to_xlsx":
         print(f"The module {module} is not yet implemented")
-        pass
+    """
 
 except Exception as e:
     exec("PrintException()")
