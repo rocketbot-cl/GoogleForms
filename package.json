@@ -28,8 +28,8 @@
         "es": "Conectar con Fomularios de Google"
       },
       "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+        "en": "Connect with Google Forms",
+        "es": "Conectar con Formularios de Google"
       },
       "form": {
         "css": "modal-lg",
@@ -43,7 +43,7 @@
               "pr": "C:\\Usuario\\Desktop\\credentials.json"
             },
             "title": {
-              "es": "Ruta archivo de credenciales",
+              "es": "Ruta del archivo de credenciales",
               "en": "Credentials file path",
               "pr": "Caminho de credenciais"
             },
@@ -77,6 +77,15 @@
             "remove_vars": true,
             "id": "result",
             "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Conectar con formularios cargará el archivo según la ruta del archivo de credenciales y se conectará con Google Forms. En caso de éxito grabará True en la variable designada para grabar el resultado",
+              "en": "Connect with google forms will load the credentials files as indicated by the first field. Afterwards, in a success case the bot will write True in the designated variable"
+            },
+            "id": "label",
+            "css": "col-md-12"
           }
         ]
       },
@@ -95,331 +104,12 @@
     },
     {
       "title": {
-        "en": "List Form",
-        "es": "Listar Formulario"
-      },
-      "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
-      },
-      "form": {
-        "css": "modal-lg",
-        "style": "min-width:1024px;",
-        "inputs": [
-          {
-            "type": "input",
-            "placeholder": "this is a placeholder",
-            "title": {
-              "en": "Input text:",
-              "es": "Entrada de texto:"
-            },
-            "id": "input_1",
-            "css": "col-md-6"
-          },
-          {
-            "type": "select",
-            "title": {
-              "es": "Selector de datos:",
-              "en": "Input select:"
-            },
-            "options": [
-              {
-                "title": "--Seleccione--",
-                "value": ""
-              },
-              {
-                "title": "name",
-                "value": "name"
-              },
-              {
-                "title": "class",
-                "value": "class"
-              }
-            ],
-            "help": {
-              "es": "Help example",
-              "en": "Help example",
-              "cn": "Help example"
-            },
-            "id": "option_",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_select",
-            "placeholder": {
-              "es": "Ruta a archivo",
-              "en": "Path to file"
-            },
-            "title": {
-              "es": "Seleccionar un archivo:",
-              "en": "Select a file:"
-            },
-            "help": {
-              "es": "Ruta donde está el archivo",
-              "en": "Path to file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_new",
-            "placeholder": {
-              "es": "Archivo nuevo",
-              "en": "New File"
-            },
-            "title": {
-              "es": "Crear Archivo Nuevo:",
-              "en": "Create new file:"
-            },
-            "help": {
-              "es": "Ruta donde se creara el archivo nuevo",
-              "en": "Path to new file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "folder_select",
-            "placeholder": {
-              "es": "Ruta a Carpeta",
-              "en": "Path to folder"
-            },
-            "title": {
-              "es": "Seleccionar una carpeta:",
-              "en": "Select a Folder:"
-            },
-            "help": {
-              "es": "Ruta a la carpeta",
-              "en": "Path to folder"
-            },
-            "id": "folder",
-            "css": "col-md-6"
-          },
-          {
-            "type": "checkbox",
-            "placeholder": {
-              "es": "Checkbox",
-              "en": "Checkbox"
-            },
-            "title": {
-              "es": "Checkbox title:",
-              "en": "Checkbox title:"
-            },
-            "help": {
-              "es": "Ayuda de Checkbox",
-              "en": "Checkbox help"
-            },
-            "id": "check",
-            "css": "col-md-6"
-          },
-          {
-            "type": "textarea",
-            "placeholder": {
-              "es": "Textarea placeholder",
-              "en": "Textarea placeholder"
-            },
-            "title": {
-              "es": "Textarea title:",
-              "en": "Textarea  title:"
-            },
-            "help": {
-              "es": "Ayuda de Textarea",
-              "en": "Textarea help"
-            },
-            "id": "Textarea",
-            "css": "col-md-6"
-          },
-          {
-            "type": "label",
-            "title": {
-              "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
-              "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
-            },
-            "id": "label",
-            "css": "col-md-6"
-          }
-        ]
-      },
-      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
-      "module": "list_form",
-      "module_name": "GoogleForms",
-      "father": "module",
-      "group": "scripts",
-      "linux": false,
-      "windows": true,
-      "mac": false,
-      "docker": false,
-      "visible": true,
-      "options": false
-    },
-    {
-      "title": {
-        "en": "Read Form",
-        "es": "Leer Formulario"
-      },
-      "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
-      },
-      "form": {
-        "css": "modal-lg",
-        "style": "min-width:1024px;",
-        "inputs": [
-          {
-            "type": "input",
-            "placeholder": "this is a placeholder",
-            "title": {
-              "en": "Input text:",
-              "es": "Entrada de texto:"
-            },
-            "id": "input_1",
-            "css": "col-md-6"
-          },
-          {
-            "type": "select",
-            "title": {
-              "es": "Selector de datos:",
-              "en": "Input select:"
-            },
-            "options": [
-              {
-                "title": "--Seleccione--",
-                "value": ""
-              },
-              {
-                "title": "name",
-                "value": "name"
-              },
-              {
-                "title": "class",
-                "value": "class"
-              }
-            ],
-            "help": {
-              "es": "Help example",
-              "en": "Help example",
-              "cn": "Help example"
-            },
-            "id": "option_",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_select",
-            "placeholder": {
-              "es": "Ruta a archivo",
-              "en": "Path to file"
-            },
-            "title": {
-              "es": "Seleccionar un archivo:",
-              "en": "Select a file:"
-            },
-            "help": {
-              "es": "Ruta donde está el archivo",
-              "en": "Path to file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_new",
-            "placeholder": {
-              "es": "Archivo nuevo",
-              "en": "New File"
-            },
-            "title": {
-              "es": "Crear Archivo Nuevo:",
-              "en": "Create new file:"
-            },
-            "help": {
-              "es": "Ruta donde se creara el archivo nuevo",
-              "en": "Path to new file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "folder_select",
-            "placeholder": {
-              "es": "Ruta a Carpeta",
-              "en": "Path to folder"
-            },
-            "title": {
-              "es": "Seleccionar una carpeta:",
-              "en": "Select a Folder:"
-            },
-            "help": {
-              "es": "Ruta a la carpeta",
-              "en": "Path to folder"
-            },
-            "id": "folder",
-            "css": "col-md-6"
-          },
-          {
-            "type": "checkbox",
-            "placeholder": {
-              "es": "Checkbox",
-              "en": "Checkbox"
-            },
-            "title": {
-              "es": "Checkbox title:",
-              "en": "Checkbox title:"
-            },
-            "help": {
-              "es": "Ayuda de Checkbox",
-              "en": "Checkbox help"
-            },
-            "id": "check",
-            "css": "col-md-6"
-          },
-          {
-            "type": "textarea",
-            "placeholder": {
-              "es": "Textarea placeholder",
-              "en": "Textarea placeholder"
-            },
-            "title": {
-              "es": "Textarea title:",
-              "en": "Textarea  title:"
-            },
-            "help": {
-              "es": "Ayuda de Textarea",
-              "en": "Textarea help"
-            },
-            "id": "Textarea",
-            "css": "col-md-6"
-          },
-          {
-            "type": "label",
-            "title": {
-              "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
-              "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
-            },
-            "id": "label",
-            "css": "col-md-6"
-          }
-        ]
-      },
-      "video_youtube": "",
-      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
-      "module": "read_form",
-      "module_name": "GoogleForms",
-      "father": "module",
-      "group": "scripts",
-      "linux": false,
-      "windows": true,
-      "mac": false,
-      "docker": false,
-      "visible": true,
-      "options": false
-    },
-    {
-      "title": {
         "en": "Create Form",
         "es": "Crear Formulario"
       },
       "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+        "en": "Create a new form using the title given",
+        "es": "Crear un Formulario de Google"
       },
       "form": {
         "css": "modal-lg",
@@ -437,47 +127,33 @@
             },
             "id": "input_",
             "remove_vars": true,
-            "css": "col-md-6"
+            "css": "col-md-12"
           },
           {
-            "type": "select",
+            "type": "input",
+            "placeholder": "result",
             "title": {
-              "es": "Seleccione que desea:",
-              "en": "Select one of the following:"
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
             },
-            "options": [
-              {
-                "title": "--Select--",
-                "value": ""
-              },
-              {
-                "title": "Create a new Form",
-                "value": "create_new_form"
-              },
-              {
-                "title": "Duplicate an existing Form",
-                "value": "duplicate_a_form"
-              },
-              {
-                "title": "Convert Form to a Quiz",
-                "value": "convert_form_to_quiz"
-              }
-            ],
-            "help": {
-              "es": "Un quiz es un cuestionario, se asignan puntuaciones, definen respuestas y proporcionan comentarios automáticamente",
-              "en": "With a quiz you can assign values, set answers and automatically provide feedback"
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
             },
-            "id": "option_",
-            "css": "col-md-6"
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
           },
           {
             "type": "label",
             "title": {
-              "es": "Este comando creará un nuevo formulario con título en título",
-              "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+              "es": "Este comando creará un nuevo formulario cuyo título es el del primer campo. En caso de éxito grabara True en la variable indicada",
+              "en": "This command will create a form with a title specified on the field, in a success case the bot will write True in the designated variable"
             },
             "id": "label",
-            "css": "col-md-6"
+            "css": "col-md-12"
           }
         ]
       },
@@ -496,12 +172,12 @@
     },
     {
       "title": {
-        "en": "Delete Form",
-        "es": "Eliminar Formulario"
+        "en": "Read Form",
+        "es": "Leer Formulario"
       },
       "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+        "en": "This collects the metadata of the form",
+        "es": "Junta los datos propios formulario"
       },
       "form": {
         "css": "modal-lg",
@@ -509,141 +185,63 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "this is a placeholder",
+            "placeholder": "FormID",
             "title": {
-              "en": "Input text:",
-              "es": "Entrada de texto:"
+              "en": "FormID:",
+              "es": "FormID:"
             },
             "id": "input_1",
-            "css": "col-md-6"
+            "css": "col-md-12"
           },
           {
-            "type": "select",
+            "type": "input",
+            "placeholder": "result",
             "title": {
-              "es": "Selector de datos:",
-              "en": "Input select:"
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
             },
-            "options": [
-              {
-                "title": "--Seleccione--",
-                "value": ""
-              },
-              {
-                "title": "name",
-                "value": "name"
-              },
-              {
-                "title": "class",
-                "value": "class"
-              }
-            ],
-            "help": {
-              "es": "Help example",
-              "en": "Help example",
-              "cn": "Help example"
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
             },
-            "id": "option_",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_select",
-            "placeholder": {
-              "es": "Ruta a archivo",
-              "en": "Path to file"
-            },
-            "title": {
-              "es": "Seleccionar un archivo:",
-              "en": "Select a file:"
-            },
-            "help": {
-              "es": "Ruta donde está el archivo",
-              "en": "Path to file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_new",
-            "placeholder": {
-              "es": "Archivo nuevo",
-              "en": "New File"
-            },
-            "title": {
-              "es": "Crear Archivo Nuevo:",
-              "en": "Create new file:"
-            },
-            "help": {
-              "es": "Ruta donde se creara el archivo nuevo",
-              "en": "Path to new file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "folder_select",
-            "placeholder": {
-              "es": "Ruta a Carpeta",
-              "en": "Path to folder"
-            },
-            "title": {
-              "es": "Seleccionar una carpeta:",
-              "en": "Select a Folder:"
-            },
-            "help": {
-              "es": "Ruta a la carpeta",
-              "en": "Path to folder"
-            },
-            "id": "folder",
-            "css": "col-md-6"
-          },
-          {
-            "type": "checkbox",
-            "placeholder": {
-              "es": "Checkbox",
-              "en": "Checkbox"
-            },
-            "title": {
-              "es": "Checkbox title:",
-              "en": "Checkbox title:"
-            },
-            "help": {
-              "es": "Ayuda de Checkbox",
-              "en": "Checkbox help"
-            },
-            "id": "check",
-            "css": "col-md-6"
-          },
-          {
-            "type": "textarea",
-            "placeholder": {
-              "es": "Textarea placeholder",
-              "en": "Textarea placeholder"
-            },
-            "title": {
-              "es": "Textarea title:",
-              "en": "Textarea  title:"
-            },
-            "help": {
-              "es": "Ayuda de Textarea",
-              "en": "Textarea help"
-            },
-            "id": "Textarea",
-            "css": "col-md-6"
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
           },
           {
             "type": "label",
             "title": {
-              "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
-              "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+              "es": "Este commando buscara la metadata del form. Para eso se necesita especificar el FormID, el cual se encuentra en el link, despues de /d/ y antes de /edit",
+              "en": "This command will read the metadata of the form. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link."
             },
             "id": "label",
-            "css": "col-md-6"
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Por ejemplo, en https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit el id es 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w",
+              "en": "For example, for this link https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit the id is 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Luego, se guardará la informacion en la variable indicada",
+              "en": "Afterwards, the return will be stored in the variable called"
+            },
+            "id": "label",
+            "css": "col-md-12"
           }
         ]
       },
       "video_youtube": "",
       "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
-      "module": "delete_form",
+      "module": "read_form",
       "module_name": "GoogleForms",
       "father": "module",
       "group": "scripts",
@@ -656,12 +254,12 @@
     },
     {
       "title": {
-        "en": "Export to .xlsx",
-        "es": "Exportar a .xlsx"
+        "en": "Retrieve responses",
+        "es": "Recolectar respuestas"
       },
       "description": {
-        "en": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur.",
-        "es": "Culpa reprehenderit occaecat velit nisi minim ipsum nostrud consequat excepteur proident mollit. Pariatur cupidatat commodo eiusmod id ex nostrud veniam. Tempor fugiat eiusmod nostrud sit ullamco duis quis minim dolore esse sunt excepteur enim enim. Nulla laborum enim consectetur reprehenderit dolore aliquip esse eu elit et quis nisi nulla. Nulla proident dolor irure quis eiusmod minim consectetur."
+        "en": "Retrieve the responses of a form",
+        "es": "Recolecta las respuestas del formulario"
       },
       "form": {
         "css": "modal-lg",
@@ -669,141 +267,63 @@
         "inputs": [
           {
             "type": "input",
-            "placeholder": "this is a placeholder",
+            "placeholder": "FormID",
             "title": {
-              "en": "Input text:",
-              "es": "Entrada de texto:"
+              "en": "FormID:",
+              "es": "FormID:"
             },
             "id": "input_1",
-            "css": "col-md-6"
+            "css": "col-md-12"
           },
           {
-            "type": "select",
+            "type": "input",
+            "placeholder": "result",
             "title": {
-              "es": "Selector de datos:",
-              "en": "Input select:"
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
             },
-            "options": [
-              {
-                "title": "--Seleccione--",
-                "value": ""
-              },
-              {
-                "title": "name",
-                "value": "name"
-              },
-              {
-                "title": "class",
-                "value": "class"
-              }
-            ],
-            "help": {
-              "es": "Help example",
-              "en": "Help example",
-              "cn": "Help example"
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
             },
-            "id": "option_",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_select",
-            "placeholder": {
-              "es": "Ruta a archivo",
-              "en": "Path to file"
-            },
-            "title": {
-              "es": "Seleccionar un archivo:",
-              "en": "Select a file:"
-            },
-            "help": {
-              "es": "Ruta donde está el archivo",
-              "en": "Path to file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "file_new",
-            "placeholder": {
-              "es": "Archivo nuevo",
-              "en": "New File"
-            },
-            "title": {
-              "es": "Crear Archivo Nuevo:",
-              "en": "Create new file:"
-            },
-            "help": {
-              "es": "Ruta donde se creara el archivo nuevo",
-              "en": "Path to new file"
-            },
-            "id": "pdf",
-            "css": "col-md-6"
-          },
-          {
-            "type": "folder_select",
-            "placeholder": {
-              "es": "Ruta a Carpeta",
-              "en": "Path to folder"
-            },
-            "title": {
-              "es": "Seleccionar una carpeta:",
-              "en": "Select a Folder:"
-            },
-            "help": {
-              "es": "Ruta a la carpeta",
-              "en": "Path to folder"
-            },
-            "id": "folder",
-            "css": "col-md-6"
-          },
-          {
-            "type": "checkbox",
-            "placeholder": {
-              "es": "Checkbox",
-              "en": "Checkbox"
-            },
-            "title": {
-              "es": "Checkbox title:",
-              "en": "Checkbox title:"
-            },
-            "help": {
-              "es": "Ayuda de Checkbox",
-              "en": "Checkbox help"
-            },
-            "id": "check",
-            "css": "col-md-6"
-          },
-          {
-            "type": "textarea",
-            "placeholder": {
-              "es": "Textarea placeholder",
-              "en": "Textarea placeholder"
-            },
-            "title": {
-              "es": "Textarea title:",
-              "en": "Textarea  title:"
-            },
-            "help": {
-              "es": "Ayuda de Textarea",
-              "en": "Textarea help"
-            },
-            "id": "Textarea",
-            "css": "col-md-6"
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
           },
           {
             "type": "label",
             "title": {
-              "es": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum.",
-              "en": "Qui non minim et do non amet consectetur culpa commodo incididunt cillum. Aliquip consequat deserunt incididunt nulla ex elit proident laborum."
+              "es": "Este comando junta todas las respuestas enviadas al formulario, segun su correspondiente FormID. El FormID se encuentra en el link, despues de /d/ y antes de /edit",
+              "en": "This command collects all the responses sent to a form by a certain FormID. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link"
             },
             "id": "label",
-            "css": "col-md-6"
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Por ejemplo, en https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit el id es 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w",
+              "en": "For example, for this link https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit the id is 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Luego, se guardará la informacion en la variable indicada",
+              "en": "Afterwards, the return will be stored in the variable called"
+            },
+            "id": "label",
+            "css": "col-md-12"
           }
         ]
       },
       "video_youtube": "",
       "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
-      "module": "export_to_xlsx",
+      "module": "retrieve_responses",
       "module_name": "GoogleForms",
       "father": "module",
       "group": "scripts",
