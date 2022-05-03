@@ -34,8 +34,8 @@ base_path = tmp_global_obj["basepath"]  # type:ignore
 google_directory_path = os.path.join(base_path, "modules", "GoogleForms")
 gd_libs_path = os.path.join(google_directory_path, "libs")  # type:ignore
 
-if gd_libs_path not in sys.path:
-    sys.path.append(gd_libs_path)
+if gd_libs_path not in sys.path:  # type: ignore
+    sys.path.append(gd_libs_path)  # type: ignore
 
 """
 The code of each module works as a local scope. Each command that is executed resets the data.
@@ -73,8 +73,8 @@ class GoogleDirectory:
 
     def config_credentials(self):
         """Configure the credentials."""
-        from google_auth_oauthlib.flow import InstalledAppFlow
-        from googleapiclient import discovery
+        from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
+        from googleapiclient import discovery  # type: ignore
 
         self.creds = None
 
@@ -108,7 +108,6 @@ try:
 
         except Exception as e:
             SetVar(result, False)  # type:ignore
-            print(f'imprimio False en la variable "{result}"')
             PrintException()  # type:ignore
             raise e
 
@@ -120,6 +119,7 @@ try:
         """
         For faster fixing, I set constant the option to create form
         Please delete this harcode before implementing the othe methods
+        module == "duplicate_a_form" and module == "convert_form_to_quiz"
         """
         create_form_option = "create_new_form"
 
@@ -127,26 +127,40 @@ try:
 
         # Write a JSON to create a new form. Google Forms API compliant
         if create_form_option == "create_new_form":
+            # creates a single form with just the title
             # https://developers.google.com/forms/api/guides/create-form-quiz#create_a_new_form
-            form_title = GetParams("input_")
+            form_title = GetParams("input_")  # type:ignore
+            result = GetParams(  # type:ignore # Get variable name where save results
+                "result"
+            )
             NEW_FORM = {
                 "info": {
                     "title": f"{form_title}",
                 }
             }
 
-            # Create the form
-            result = (
-                google_directory.form_service.forms().create(body=NEW_FORM).execute()
-            )
+            try:
+                # Create the form
+                create_form = (
+                    google_directory.form_service.forms()
+                    .create(body=NEW_FORM)
+                    .execute()
+                )
 
-            # Prints the result to show the form has been created
-            get_result = (
-                google_directory.form_service.forms()
-                .get(formId=result["formId"])
-                .execute()
-            )
-            print(get_result)
+                # Looks for the formID of the recently created form
+                get_result = (
+                    google_directory.form_service.forms()
+                    .get(formId=create_form["formId"])
+                    .execute()
+                )
+                form_link = get_result["responderUri"]
+                print(f"The form was created and the link is {form_link}")
+                SetVar(result, True)  # type: ignore
+
+            except Exception as e:
+                SetVar(result, False)  # type: ignore
+                PrintException()  # type:ignore
+                raise e
 
         """
         # task suspended by new priorities
@@ -174,23 +188,31 @@ try:
             form_id = GetParams("input_") #type: ignore
         """
 
-    # task suspended by new priorities
     if module == "read_form":
-    # this collects the metadata of the form. 
-    # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_form_contents_and_metadata
-        form_id = GetParams("input_1") #type: ignore
-        print(f'the form id is {form_id}')
+        # this collects the metadata of the form.
+        # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_form_contents_and_metadata
+        form_id = GetParams("input_1")  # type: ignore
+        result = GetParams(  # type:ignore # Get variable name where save results
+            "result"
+        )
 
         google_directory = mod_google_directory[session]
 
-        result = (
-            google_directory.form_service.forms().get(formId=form_id).execute()
-        )
-        print(result)
+        try:
+            # Read the form
+            read_form = (
+                google_directory.form_service.forms().get(formId=form_id).execute()
+            )
+
+            # Store the content in the result var
+            SetVar(result, read_form)  # type: ignore
+        except Exception as e:
+            PrintException()  # type: ignore
+            raise e
 
     """
     # this module is not even written in the package.json!
-    if module == "update_form":
+    if module == "add_question":
         print(f"The module {module} is not yet implemented")
         pass
 
@@ -233,18 +255,24 @@ try:
     if module == "retrieve_responses":
         # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_all_form_responses
         form_id = GetParams("input_1")  # type: ignore
-        print(f"the form id is {form_id}")
+        result = GetParams(  # type:ignore # Get variable name where save results
+            "result"
+        )  # type:ignore # Get variable name where save results
 
         google_directory = mod_google_directory[session]
 
-        result = (
-            google_directory.form_service.forms()
-            .responses()
-            .list(formId=form_id)
-            .execute()
-        )
-        print(result)
+        try:
+            responses = (
+                google_directory.form_service.forms()
+                .responses()
+                .list(formId=form_id)
+                .execute()
+            )
+            SetVar(result, responses)  # type:ignore
 
+        except Exception as e:
+            PrintException()  # type: ignore
+            raise e
     """
     # task suspended by new priorities
     if module == "delete_form":
