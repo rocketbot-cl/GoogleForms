@@ -44,7 +44,7 @@ Connect with google forms will load the credentials files as indicated by the fi
 
 | Parameters                | Description                                                                                                | Example                             |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| Credentials file path     | JSON file with the credentials to access the Google Forms API. See the documentation for more information. | C:\\User\\Desktop\\credentials.json |
+| Credentials file path     | JSON file with the credentials to access the Google Forms API. See the documentation for more information. | C:\/User\/Desktop\/credentials.json |
 | Assign result to variable | Name of the variable where the result of the execution of the command will be assigned.                    | result                              |
 
 ### Create Form

@@ -46,7 +46,7 @@ Conectar con formularios cargará el archivo según la ruta del archivo de crede
 
 | Parámetros                       | Descripción                                                                                                                  | Ejemplo                                 |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
-| Ruta del archivo de credenciales | Archivo JSON con las credenciales de acceso a la API de Google Forms. Revisar la documentación para obtener más información. | C:\\Usuario\\Desktop\\credenciales.json |
+| Ruta del archivo de credenciales | Archivo JSON con las credenciales de acceso a la API de Google Forms. Revisar la documentación para obtener más información. | C:\/Usuario\/Desktop\/credenciales.json |
 | Asignar resultado a variable     | Nombre de la variable donde se asignará el resultado de la execución del comando.                                            | result                                  |
 
 ### Crear Formulario
