@@ -1,4 +1,4 @@
-# Google Admin
+# Google Forms
 
 This module connects to the [Google Forms API](https://developers.google.com/forms/api). You can connect to, create, read and retrieve responses from Google Forms
 
@@ -61,7 +61,7 @@ To use this module you need to configure the credentials to connect with the Goo
 
 ### Dependencies
 
-- [**google-api-python-client**](https://pypi.org/project/google-api-python-client/)- [**google-auth-httplib2**](https://pypi.org/project/google-auth-httplib2/)- [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/)
+- [**google-api-python-client**](https://pypi.org/project/google-api-python-client/) - [**google-auth-httplib2**](https://pypi.org/project/google-auth-httplib2/) - [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/)
 
 ### License
 

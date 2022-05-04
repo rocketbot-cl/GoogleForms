@@ -48,9 +48,9 @@
               "pr": "Caminho de credenciais"
             },
             "description": {
-              "es": "Archivo json con las credenciales de acceso a la API de Google Admin. Revisar la documentación para obtener más información.",
-              "en": "JSON file with the credentials to access the Google Admin API. See the documentation for more information.",
-              "pr": "Arquivo json com as credenciais de acesso ao API do Google Admin. Veja a documentação para obter mais informações."
+              "es": "Archivo JSON con las credenciales de acceso a la API de Google Forms. Revisar la documentación para obtener más información.",
+              "en": "JSON file with the credentials to access the Google Forms API. See the documentation for more information.",
+              "pr": "Arquivo JSON com as credenciais de acesso ao API do Google Forms. Veja a documentação para obter mais informações."
             },
             "extensions": [
               [
