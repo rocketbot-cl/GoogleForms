@@ -60,9 +60,9 @@ Este comando creará un nuevo formulario cuyo título es el del primer campo. En
 
 ### Leer Formulario
 
-Este commando buscara la metadata del form. Para eso se necesita especificar el FormID, el cual se encuentra en el link, despues de /d/ y antes de /edit
+Este commando buscara la metadata del form. Para eso se necesita especificar el FormID, el cual se encuentra en el link, despues de `/d/` and `/edit/`.
 
-Por ejemplo, en `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` el id es `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
+Por ejemplo, en `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` el `id` es `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
 
 Luego, se guardará la informacion en la variable indicada
 
@@ -73,9 +73,9 @@ Luego, se guardará la informacion en la variable indicada
 
 ### Recolectar respuestas de un formulario
 
-Este comando junta todas las respuestas enviadas al formulario, segun su correspondiente FormID. El FormID se encuentra en el link, despues de /d/ y antes de /edit
+Este comando junta todas las respuestas enviadas al formulario, segun su correspondiente FormID. El FormID se encuentra en el link, despues de `/d/` and `/edit/`.
 
-Por ejemplo, en `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` el id es `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
+Por ejemplo, en `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` el `id` es `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
 
 Luego, se guardará la informacion en la variable indicada
 

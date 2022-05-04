@@ -58,9 +58,9 @@ This command will create a form with a title specified on the field, in a succes
 
 ### Read Form
 
-This command will read the metadata of the form. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link.
+This command will read the metadata of the form. You have to specify the FormID, which is found inbetween `/d/` and `/edit/` part of the link.
 
-For example, for this link `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` the id is `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
+For example, for this link `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` the `id` is `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
 
 Afterwards, the return will be stored in the variable called
 
@@ -71,9 +71,9 @@ Afterwards, the return will be stored in the variable called
 
 ### Retrieve the responses of a form
 
-This command collects all the responses sent to a form by a certain FormID. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link
+This command collects all the responses sent to a form by a certain FormID. You have to specify the FormID, which is found inbetween `/d/` and `/edit/` part of the link
 
-For example, for this link `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` the id is `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
+For example, for this link `https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit` the `id` is `168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w`
 
 Afterwards, the return will be stored in the variable called
 
