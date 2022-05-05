@@ -2,13 +2,13 @@
 
 This module connects to the [Google Forms API](https://developers.google.com/forms/api). You can connect to, create, read and retrieve responses from Google Forms
 
-![banner](imgs/Banner_GoogleForms.png)
+![banner](img/Banner_GoogleForms.jpg)
 
-# How to install this module
+## How to install this module
 
 **Download** and **install** the content in `modules` folder in Rocketbot path
 
-# How to use this module
+## How to use this module
 
 To use this module you need to configure the credentials to connect with the Google Forms API. To this, you need to follow the steps below:
 
@@ -18,15 +18,29 @@ To use this module you need to configure the credentials to connect with the Goo
   - In the **Project Name** field, enter a descriptive name for your project.
   - Complete the other steps with your information
 
-- Enable API
+- Enable API:
 
   - Go to [Google Cloud Console](https://console.cloud.google.com/)
   - At the top-left, click **Menu** > **APIs & Services** > **Library**
-  - In the browser field, enter **Admin SDK API**
-  - Click in the result **Admin SDK API**
+  - In the browser field, enter **Google Forms API**
+  - Click in the result **Google Forms API**
   - Click **Enable**
 
-- Create Credentials
+- Register OAuth Consent:
+
+  - Go to [Google Cloud Console](https://console.cloud.google.com/)
+  - At the top-left, click **Menu** > **APIs & Services** > **OAuth consent Screen**
+  - Pick **External** and click **Create**
+  - Write an **App name** and an **User support email**
+  - Down below complete the **Email Addresses** field on the section **Developer contact information**
+  - Click **Save and continue**
+  - In the second step **Scopes** click on **Save and continue**
+  - In the third step **Test Users** click on **Add user** and fill an email adress
+  - Afterwards, click con **Save and continue**
+  - Finally, click on **Back to dashboard**
+
+- Create Credentials:
+
   - Go to [Google Cloud Console](https://console.cloud.google.com/)
   - At the top-left, click **Menu** > **APIs & Services** > **Credentials**
   - Click **Create credentials**
