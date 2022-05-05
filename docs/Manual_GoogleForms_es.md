@@ -2,7 +2,7 @@
 
 Este módulo conecta con [Google Forms API](https://developers.google.com/forms/api). Puedes conectarte con, crear, leer y recolectar respuestas de Google Forms
 
-![banner](imgs/Banner_GoogleForms.png)
+![banner](img/Banner_GoogleForms.jpg)
 
 ## Como instalar este módulo
 
@@ -15,20 +15,32 @@ Para utilizar este módulo necesitas habilitar la API de Google Admin para tu cu
 - Crear un projecto en Google Cloud Console (Saltar si ya tienes un proyecto creado)
 
   - En el menú de la izquierda, dar click en **Menu** > **IAM & Admin** > **Create a project**
-
   - En el campo **Project Name**, agregar un nombre para el proyecto
-
   - Completar los siguientes campos según corresponda
 
 - Habilitar la API:
 
   - Ir a [Google Cloud Console](https://console.cloud.google.com/)
   - En el menú arriba a la derecha, dar click en **Menu** > **APIs & Services** > **Library**
-  - En el buscador, buscar **Admin SDK API**
-  - Dar click en el resultado **Admin SDK API**
+  - En el buscador, buscar **Google Forms API**
+  - Dar click en el resultado **Google Forms API**
   - Click en el botón **Habilitar**
 
+- Registrar consentimiento de OAuth:
+
+  - Ir a [Google Cloud Console](https://console.cloud.google.com/)
+  - En el menú arriba a la derecha, dar click en **Menu** > **API & Servicios** > **Pantalla de consentimiento de OAuth**
+  - Elegir **Externos** y click en **Crear**
+  - Completar el campo **Nombre de la aplicacion** y **Correo electrónico de asistencia del usuario**
+  - Más abajo, antes del final, completar el field **Direcciones de correo electrónico** del apartado **Información de contacto del desarrollador**
+  - Hacer click en **Guardar y continuar**
+  - En el paso 2 **Permisos** hacer click en **Guardar y continuar**
+  - En el paso 3 **Usuarios de prueba** hacer click en **Add users** y escribir la direccion de correo
+  - Click en **Guardar y continuar**
+  - Finalizar clickeando **Volver al panel**
+
 - Crear credenciales de Google:
+
   - Ir a [Google Cloud Console](https://console.cloud.google.com/)
   - En el menú arriba a la derecha, dar click en **Menu** > **APIs & Services** > **Credentials**
   - Click en el botón **Create credentials**
