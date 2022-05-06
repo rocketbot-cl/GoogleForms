@@ -5,9 +5,9 @@
   "version": "0.1.0",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
-  "linux": false,
+  "linux": true,
   "windows": true,
-  "mac": false,
+  "mac": true,
   "docker": false,
   "dependencies": {
     "google-api-python-client": "*",
@@ -95,9 +95,9 @@
       "module_name": "GoogleForms",
       "father": "module",
       "group": "scripts",
-      "linux": false,
+      "linux": true,
       "windows": true,
-      "mac": false,
+      "mac": true,
       "docker": false,
       "visible": true,
       "options": false
