@@ -1,0 +1,338 @@
+{
+  "author": "Auca Maillot",
+  "description": "Modulo para manipular Formularios de google | Manage Google Forms with this module",
+  "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "http://rocketbot.co/",
+  "linux": true,
+  "windows": true,
+  "mac": true,
+  "docker": false,
+  "dependencies": {
+    "google-api-python-client": "*",
+    "google-auth-httplib2": "*",
+    "google-auth-oauthlib": "*"
+  },
+  "type": "module",
+  "name": "GoogleForms",
+  "title": {
+    "en": "Google Forms",
+    "es": "Google Formularios"
+  },
+  "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+  "children": [
+    {
+      "title": {
+        "en": "Connect with G-Forms",
+        "es": "Conectar con Fomularios de Google"
+      },
+      "description": {
+        "en": "Connect with Google Forms",
+        "es": "Conectar con Formularios de Google"
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "file_select",
+            "placeholder": {
+              "es": "C:\\Usuario\\Desktop\\credenciales.json",
+              "en": "C:\\User\\Desktop\\credentials.json",
+              "pr": "C:\\Usuario\\Desktop\\credentials.json"
+            },
+            "title": {
+              "es": "Ruta del archivo de credenciales",
+              "en": "Credentials file path",
+              "pr": "Caminho de credenciais"
+            },
+            "description": {
+              "es": "Archivo JSON con las credenciales de acceso a la API de Google Forms. Revisar la documentación para obtener más información.",
+              "en": "JSON file with the credentials to access the Google Forms API. See the documentation for more information.",
+              "pr": "Arquivo JSON com as credenciais de acesso ao API do Google Forms. Veja a documentação para obter mais informações."
+            },
+            "extensions": [
+              [
+                "Json Files",
+                "*.json"
+              ]
+            ],
+            "id": "credentials_path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "result",
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
+            },
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Conectar con formularios cargará el archivo según la ruta del archivo de credenciales y se conectará con Google Forms. En caso de éxito grabará True en la variable designada para grabar el resultado",
+              "en": "Connect with google forms will load the credentials files as indicated by the first field. Afterwards, in a success case the bot will write True in the designated variable"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+      "module": "connect_forms",
+      "module_name": "GoogleForms",
+      "father": "module",
+      "group": "scripts",
+      "linux": true,
+      "windows": true,
+      "mac": true,
+      "docker": false,
+      "visible": true,
+      "options": false
+    },
+    {
+      "title": {
+        "en": "Create Form",
+        "es": "Crear Formulario"
+      },
+      "description": {
+        "en": "Create a new form using the title given",
+        "es": "Crear un Formulario de Google"
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Mi título de Form",
+              "en": "My form title"
+            },
+            "title": {
+              "es": "Título del Form:",
+              "en": "Form title:"
+            },
+            "id": "input_",
+            "remove_vars": true,
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "result",
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
+            },
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Este comando creará un nuevo formulario cuyo título es el del primer campo. En caso de éxito grabara True en la variable indicada",
+              "en": "This command will create a form with a title specified on the field, in a success case the bot will write True in the designated variable"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+      "module": "create_form",
+      "module_name": "GoogleForms",
+      "father": "module",
+      "group": "scripts",
+      "linux": false,
+      "windows": true,
+      "mac": false,
+      "docker": false,
+      "visible": true,
+      "options": false
+    },
+    {
+      "title": {
+        "en": "Read Form",
+        "es": "Leer Formulario"
+      },
+      "description": {
+        "en": "This collects the metadata of the form",
+        "es": "Junta los datos propios formulario"
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "FormID",
+            "title": {
+              "en": "FormID:",
+              "es": "FormID:"
+            },
+            "id": "input_1",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "result",
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
+            },
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Este commando buscara la metadata del form. Para eso se necesita especificar el FormID, el cual se encuentra en el link, despues de /d/ y antes de /edit",
+              "en": "This command will read the metadata of the form. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link."
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Por ejemplo, en https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit el id es 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w",
+              "en": "For example, for this link https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit the id is 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Luego, se guardará la informacion en la variable indicada",
+              "en": "Afterwards, the return will be stored in the variable called"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+      "module": "read_form",
+      "module_name": "GoogleForms",
+      "father": "module",
+      "group": "scripts",
+      "linux": false,
+      "windows": true,
+      "mac": false,
+      "docker": false,
+      "visible": true,
+      "options": false
+    },
+    {
+      "title": {
+        "en": "Retrieve responses",
+        "es": "Recolectar respuestas"
+      },
+      "description": {
+        "en": "Retrieve the responses of a form",
+        "es": "Recolecta las respuestas del formulario"
+      },
+      "form": {
+        "css": "modal-lg",
+        "style": "min-width:1024px;",
+        "inputs": [
+          {
+            "type": "input",
+            "placeholder": "FormID",
+            "title": {
+              "en": "FormID:",
+              "es": "FormID:"
+            },
+            "id": "input_1",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": "result",
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado a variável"
+            },
+            "description": {
+              "es": "Nombre de la variable donde se asignará el resultado de la execución del comando.",
+              "en": "Name of the variable where the result of the execution of the command will be assigned.",
+              "pr": "Nome da variável onde será atribuído o resultado da execução do comando."
+            },
+            "remove_vars": true,
+            "id": "result",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Este comando junta todas las respuestas enviadas al formulario, segun su correspondiente FormID. El FormID se encuentra en el link, despues de /d/ y antes de /edit",
+              "en": "This command collects all the responses sent to a form by a certain FormID. You have to specify the FormID, which is found inbetween /d/ and /edit/ part of the link"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Por ejemplo, en https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit el id es 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w",
+              "en": "For example, for this link https://docs.google.com/forms/d/168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w/edit the id is 168WM6YPG8B8PR6M5ipixcsT82b2d09lV4zrrt9b1m1w"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          },
+          {
+            "type": "label",
+            "title": {
+              "es": "Luego, se guardará la informacion en la variable indicada",
+              "en": "Afterwards, the return will be stored in the variable called"
+            },
+            "id": "label",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
+      "module": "retrieve_responses",
+      "module_name": "GoogleForms",
+      "father": "module",
+      "group": "scripts",
+      "linux": false,
+      "windows": true,
+      "mac": false,
+      "docker": false,
+      "visible": true,
+      "options": false
+    }
+  ]
+}
