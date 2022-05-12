@@ -116,11 +116,6 @@ try:
         # Just after the if is confirmed a function GetParams is called and stored in a meaningful variable
         # create_form_option = GetParams("option_")
 
-        """
-        For faster fixing, I set constant the option to create form
-        Please delete this harcode before implementing the othe methods
-        module == "duplicate_a_form" and module == "convert_form_to_quiz"
-        """
         create_form_option = "create_new_form"
 
         google_directory = mod_google_directory[session]
@@ -162,32 +157,6 @@ try:
                 PrintException()  # type:ignore
                 raise e
 
-        """
-        # task suspended by new priorities
-        if create_form_option == "duplicate_a_form":
-            # https://developers.google.com/forms/api/guides/create-form-quiz#duplicate_an_existing_form
-            form_id = GetParams("input_") #type: ignore
-            copied_file = {'title': 'my_copy'}
-            print(dir(google_directory.form_service))
-
-            result = (
-                google_directory.form_service.files()
-                .copy(fileId=form_id, body=copied_file)
-                .execute()
-            )
-
-            # Prints the result to show the form has been created
-            get_result = google_directory.form_service.forms()
-            print(get_result)
-        """
-
-        """
-        # task suspended by new priorities
-        if create_form_option == "convert_form_to_quiz":
-            # https://developers.google.com/forms/api/guides/create-form-quiz#convert_a_form_to_a_quiz
-            form_id = GetParams("input_") #type: ignore
-        """
-
     if module == "read_form":
         # this collects the metadata of the form.
         # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_form_contents_and_metadata
@@ -210,48 +179,6 @@ try:
             PrintException()  # type: ignore
             raise e
 
-    """
-    # this module is not even written in the package.json!
-    if module == "add_question":
-        print(f"The module {module} is not yet implemented")
-        pass
-
-        NEW_QUESTION = {
-            "requests": [
-                {
-                    "createItem": {
-                        "item": {
-                            "title": "In what year did the United States land a mission on the moon?",
-                            "questionItem": {
-                                "question": {
-                                    "required": True,
-                                    "choiceQuestion": {
-                                        "type": "RADIO",
-                                        "options": [
-                                            {"value": "1965"},
-                                            {"value": "1967"},
-                                            {"value": "1969"},
-                                            {"value": "1971"},
-                                        ],
-                                        "shuffle": True,
-                                    },
-                                }
-                            },
-                        },
-                        "location": {"index": 0},
-                    }
-                }
-            ]
-        }
-
-        # Adds the question to the form
-        question_setting = (
-            google_directory.form_service.forms()
-            .batchUpdate(formId=result["formId"], body=NEW_QUESTION)
-            .execute()
-        )
-    """
-
     if module == "retrieve_responses":
         # https://developers.google.com/forms/api/guides/retrieve-forms-responses#retrieve_all_form_responses
         form_id = GetParams("input_1")  # type: ignore
@@ -273,17 +200,6 @@ try:
         except Exception as e:
             PrintException()  # type: ignore
             raise e
-    """
-    # task suspended by new priorities
-    if module == "delete_form":
-        print(f"The module {module} is not yet implemented")
-    """
-
-    """
-    # task suspended by new priorities
-    if module == "export_to_xlsx":
-        print(f"The module {module} is not yet implemented")
-    """
 
 except Exception as e:
     exec("PrintException()")
