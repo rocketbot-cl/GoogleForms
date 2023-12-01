@@ -26,6 +26,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 import os
 import json
+import traceback
 
 # import sys # it's already in rocketbot main
 
@@ -71,10 +72,11 @@ class GoogleDirectory:
         self.credential_path = credential_path
         self.form_service = None
 
-    def config_credentials(self):
+    def config_credentials(self, output_path, port):
         """Configure the credentials."""
         from google_auth_oauthlib.flow import InstalledAppFlow  # type: ignore
         from googleapiclient import discovery  # type: ignore
+        
 
         self.creds = None
 
@@ -82,10 +84,41 @@ class GoogleDirectory:
             flow = InstalledAppFlow.from_client_secrets_file(
                 self.credential_path, self.SCOPES
             )
-            self.creds = flow.run_local_server()
-
+            self.creds = flow.run_local_server(port=port)
+            
+            credentials_file = {"token": self.creds.token, "refresh_token": self.creds.refresh_token, "uri": self.creds.token_uri, "client_id": self.creds.client_id, "secret": self.creds.client_secret, "scopes": self.creds.scopes}
+            
+            with open(os.path.join(output_path, "credentials.json"), "w") as file:
+                json.dump(credentials_file, file)
+            
         self.form_service = discovery.build("forms", "v1", credentials=self.creds)
-
+    
+    def validate_credentials(self, file):
+        from google.auth.transport.requests import Request # type: ignore
+        from google.oauth2.credentials import Credentials # type: ignore
+        from googleapiclient import discovery  # type: ignore
+        
+        with open(file, "r") as f:
+            data = json.load(f)
+        
+            self.creds = Credentials(
+                token=data['token'],
+                refresh_token=data['refresh_token'],
+                token_uri=data['uri'],
+                client_id=data['client_id'],
+                client_secret=data['secret'],
+                scopes=data['scopes']
+            )
+            
+            if self.creds.expired:
+                self.creds.refresh(Request())
+            
+            self.form_service = discovery.build("forms", "v1", credentials=self.creds)
+            
+            credentials_file = {"token": self.creds.token, "refresh_token": self.creds.refresh_token, "uri": self.creds.token_uri, "client_id": self.creds.client_id, "secret": self.creds.client_secret}
+        
+        with open(file, "w") as f:
+            json.dump(credentials_file, f)
 
 try:
     # Get data from robot
@@ -98,16 +131,24 @@ try:
 
     if module == "connect_forms":
         credentials_path = GetParams("credentials_path")  # type:ignore
+        port = 8080 if not GetParams("port") else GetParams("port") # type:ignore
 
         google_directory = GoogleDirectory(credentials_path)
 
         try:
-            google_directory.config_credentials()
+            creds_file = os.path.join(google_directory_path, "credentials.json")
+            
+            if os.path.exists(creds_file):
+                google_directory.validate_credentials(creds_file)
+            else:            
+                google_directory.config_credentials(google_directory_path, port)
+            
             mod_google_directory[session] = google_directory
             SetVar(result, True)  # type:ignore
 
         except Exception as e:
             SetVar(result, False)  # type:ignore
+            traceback.print_exc()
             PrintException()  # type:ignore
             raise e
 

@@ -1,10 +1,15 @@
 {
   "author": "Auca Maillot",
-  "description": "Modulo para manipular Formularios de google | Manage Google Forms with this module",
+  "description": "Manage Google Forms with this module | Modulo para manipular Formularios de google",
+  "description_lang": {
+    "en": "This module allows you to create, read and get responses of Google Forms.",
+    "es": "Este módulo le permite crear, leer y obtener respuestas de Google Forms.",
+    "pr": "Este módulo permite criar, ler e obter respostas do Formulários Google."
+  },
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "0.1.0",
+  "version": "1.1.1",
   "license": "MIT",
-  "homepage": "http://rocketbot.co/",
+  "homepage": "http://rocketbot.com/",
   "linux": true,
   "windows": true,
   "mac": true,
@@ -18,7 +23,8 @@
   "name": "GoogleForms",
   "title": {
     "en": "Google Forms",
-    "es": "Google Formularios"
+    "es": "Google Forms",
+    "pr": "Google Forms"
   },
   "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAVFBMVEUAAACAQL9ySLlySblySLlVN4pyR7pWNop9Vr7OwOf///+9qd64o9z29Pvn3/OihtHVyOqXeMuVdstySLlySLhySLhySblqQL9ySbhySLlyR7lySLnL12KQAAAAHHRSTlMABH/T/29r////////////////88OfVwx33++Ly1gcIQAAAHZJREFUeAHt0EEOQDAURVF4oAAA9r9P0ya/XtNJE9I7P5Mb+StOUogyAnIYKohIjYAImIEUHJgEB1JwQAQBQhBABAFCEEAELP0alI6gUjXQKC0LaFXnBvphBKZG6xOXwqVwyT8IYAZtEWDlYBNgP068dt1x5K0HY4kam/eIJf4AAAAASUVORK5CYII=",
   "children": [
@@ -60,6 +66,21 @@
             ],
             "id": "credentials_path",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "8080",
+              "en": "8080",
+              "pr": "8080"
+            },
+            "title": {
+              "es": "Puerto (Opcional)",
+              "en": "Port (Optional)",
+              "pr": "Porto (Opcional)"
+            },
+            "id": "port",
+            "css": "col-md-6"
           },
           {
             "type": "input",

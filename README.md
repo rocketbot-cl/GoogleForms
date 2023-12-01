@@ -1,69 +1,48 @@
-# Google Forms
 
-This module connects to the [Google Forms API](https://developers.google.com/forms/api). You can connect to, create, read and retrieve responses from Google Forms
+
+
+
+# Google Forms
+  
+This module allows you to create, read and get responses of Google Forms.  
+
+*Read this in other languages: [English](README.md), [Português](README.pr.md), [Español](README.es.md)*
 
 ## How to install this module
+  
+To install the module in Rocketbot Studio, it can be done in two ways:
+1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
+2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
-**Download** and **install** the content in `modules` folder in Rocketbot path
-
-# How to use this module
-
-To use this module you need to configure the credentials to connect with the Google Forms API. To this, you need to follow the steps below:
-
-- Create a new project in Google Cloud Console (Skip if you already have a project created)
-
-  - At the top-left, click Menu menu > IAM & Admin > Create a Project.
-  - In the Project Name field, enter a descriptive name for your project.
-  - Complete the other steps with your information
-
-- Enable API
-
-  - Go to [Google Cloud Console](https://console.cloud.google.com/)
-  - At the top-left, click **Menu** > **APIs & Services** > **Library**
-  - In the browser field, enter **Admin SDK API**
-  - Click in the result **Admin SDK API**
-  - Click **Enable**
-
-- Create Credentials
-  - Go to [Google Cloud Console](https://console.cloud.google.com/)
-  - At the top-left, click **Menu** > **APIs & Services** > **Credentials**
-  - Click **Create credentials**
-  - Click **OAuth client ID**
-  - In the **Application type** field, select **Desktop Application**
-  - In the **Name** field, enter a descriptive name for the credentials
-  - Appears a window with the credentials data. Click **Download JSON**
-  - Use this file as credentials in the module
-
----
 
 ## Overview
 
-1. Setup Google Forms credentials  
-   Configure credentials to connect with the Google Forms API.
 
-2. Create a new form  
-   This command creates a new form with the title given.
+1. Connect with G-Forms  
+Connect with Google Forms
 
-3. Read a form
-   Read the metadata of a form by introducing the FormID. Returns a JSON with the requested data.
+2. Create Form  
+Create a new form using the title given
 
-4. Retrieve responses
-   Retrieve the responses of a form by certain FormID. Returns a JSON with the responses collected.
+3. Read Form  
+This collects the metadata of the form
 
----
+4. Retrieve responses  
+Retrieve the responses of a form  
 
+
+
+
+----
 ### OS
 
 - windows
 - mac
 - linux
-- docker
 
 ### Dependencies
-
-- [**google-api-python-client**](https://pypi.org/project/google-api-python-client/) - [**google-auth-httplib2**](https://pypi.org/project/google-auth-httplib2/) - [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/)
-
+- [**google-api-python-client**](https://pypi.org/project/google-api-python-client/)- [**google-auth-httplib2**](https://pypi.org/project/google-auth-httplib2/)- [**google-auth-oauthlib**](https://pypi.org/project/google-auth-oauthlib/)
 ### License
-
+  
 ![MIT](https://camo.githubusercontent.com/107590fac8cbd65071396bb4d04040f76cde5bde/687474703a2f2f696d672e736869656c64732e696f2f3a6c6963656e73652d6d69742d626c75652e7376673f7374796c653d666c61742d737175617265)  
 [MIT](http://opensource.org/licenses/mit-license.ph)
