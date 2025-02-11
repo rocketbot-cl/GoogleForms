@@ -16,6 +16,36 @@ Para instalar el módulo en Rocketbot Studio, se puede hacer de dos formas:
 2. Automática: Al ingresar a Rocketbot Studio sobre el margen derecho encontrara la sección de **Addons**, seleccionar **Install Mods**, buscar el modulo deseado y presionar install.  
 
 
+
+## Cómo usar este modulo
+
+Habilitar la API de Google Forms
+1. Ir a la Google Cloud Console https://console.cloud.google.com/
+2. Crear un nuevo proyecto o seleccionar uno existente.
+3. En el menú lateral, ir a "API y Servicios" > "Biblioteca".
+4. Buscar "Google Forms API" y hacer clic en Habilitar.
+
+Configurar pantalla de consentimiento
+1. Ir a "API y Servicios" > "Configurar pantalla de consentimiento".
+2. Elige el tipo de usuario:
+Interno → Solo usuarios de tu organización (si usas un dominio de Google Workspace).
+Externo → Cualquier usuario con una cuenta de Google puede acceder (requiere aprobación de Google para producción).
+3. Haz clic en "Crear".
+4. Completar Información Básica: 
+Nombre de la aplicación → Escribe un nombre para identificar tu app.
+Correo electrónico de soporte del desarrollador → Ingresa tu correo de contacto.
+5. Haz clic en "Guardar y Continuar".
+6. Usuarios de prueba: agrega los correos electrónicos de los usuarios que podrán probar la API.
+
+
+Crear 
+Credenciales
+1. Ir a "API y Servicios" > "Credenciales".
+2. Hacer clic en "Crear credenciales" > "ID de cliente de OAuth".
+3. Configurar el tipo de aplicación: selecciona "Escritorio".
+4. Descargar el archivo credentials.json y guárdalo en tu proyecto.
+
+
 ## Descripción de los comandos
 
 ### Conectar con Fomularios de Google

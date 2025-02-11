@@ -15,6 +15,33 @@ To install the module in Rocketbot Studio, it can be done in two ways:
 1. Manual: __Download__ the .zip file and unzip it in the modules folder. The folder name must be the same as the module and inside it must have the following files and folders: \__init__.py, package.json, docs, example and libs. If you have the application open, refresh your browser to be able to use the new module.
 2. Automatic: When entering Rocketbot Studio on the right margin you will find the **Addons** section, select **Install Mods**, search for the desired module and press install.  
 
+## How to use this module
+
+Enable Google Forms API
+1. Go to Google Cloud Console. https://console.cloud.google.com/
+2. Create a new project or select an existing one.
+3. In the left menu, go to "API & Services" > "Library".
+4. Search for "Google Forms API" and click Enable.
+
+Configure consent screen
+1. Go to "API and Services" > "Configure consent screen".
+2. Choose the user type:
+Internal → Only users of your organization (if you use a Google Workspace domain).
+External → Any user with a Google account can access (requires Google approval for production).
+3. Click on "Create".
+4. Complete Basic Information:
+Application name → Write a name to identify your app.
+Developer support email → Enter your contact email.
+5. Click on "Save and Continue".
+6. Test users: add emails from users who can test the API.
+
+Create Credentials
+1. Go to "API & Services" > "Credentials".
+2. Click "Create Credentials" > "OAuth Client ID".
+3. Set the application type: select "Desktop".
+4. Download the 
+credentials.json file and save it in your project.
+
 
 ## Description of the commands
 
