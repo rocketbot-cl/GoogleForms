@@ -115,7 +115,7 @@ class GoogleDirectory:
             
             self.form_service = discovery.build("forms", "v1", credentials=self.creds)
             
-            credentials_file = {"token": self.creds.token, "refresh_token": self.creds.refresh_token, "uri": self.creds.token_uri, "client_id": self.creds.client_id, "secret": self.creds.client_secret}
+            credentials_file = {"token": self.creds.token, "refresh_token": self.creds.refresh_token, "uri": self.creds.token_uri, "client_id": self.creds.client_id, "secret": self.creds.client_secret, "scopes": self.creds.scopes}
         
         with open(file, "w") as f:
             json.dump(credentials_file, f)
